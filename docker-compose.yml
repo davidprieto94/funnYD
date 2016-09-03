@@ -1,0 +1,13 @@
+version: '2'
+services:
+  db:
+    build: ./postgres
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:7000
+    volumes:
+      - .:/code
+    ports:
+      - "7000:7000"
+    depends_on:
+      - db

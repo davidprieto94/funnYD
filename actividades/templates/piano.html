@@ -1,0 +1,148 @@
+{% extends "app/base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block assets %}
+    <script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/then-request/2.2.0/request.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="shortcut icon" href="image/niveles/icono.png" type="image/png">
+
+    <script src={% static "js/examples.js" %} ></script>
+    <script src={% static "js/piano.js" %} ></script>
+    <script src="//code.createjs.com/createjs-2015.11.26.min.js" ></script>
+    <link rel="stylesheet" href={% static "css/piano.css" %}>
+    <script type="text/javascript" src={% static "js/karaoke.js" %}></script>
+    <script type="text/javascript" src={% static "js/register-piano.js" %}></script>
+
+    <script type="application/javascript">
+    $(document).ready(function () {
+        $('.modal').modal('show');
+    })
+    </script>
+{% endblock %}
+{% block menu %}
+	<nav class="navbar navbar-embossed menu-nav row middle " style="background-color: #FFFF99">
+		<div class="col-4">
+			<div class="fuente">Actividades | Piano</div>
+		</div>
+		<div class="botonbarranav">
+            <a id="game_save" class="key-press fuente" style="display: inline-block" href="#"> Guardar </a>
+            |
+            <a class="fuente" style="display: inline-block" href="{% url 'actividades' %}"> Salir </a>
+		</div>
+	</nav>
+{% endblock menu %}
+
+{% block onload %}
+    {% if slug %} onload="window.get_play('{{ slug }}'); return false;" {% endif %}
+{% endblock %}
+{% block  content %}
+	<div id="wellcome">
+        <div class="container">
+            <h1>Hola {{ user.first_name }}</h1>
+            <h3>Bienvenido a Piano</h3>
+            <p>Selecciona el nivel de dificultad con el que quieres enfrentar el reto.</p>
+            <div class="col-md-12">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <div class="col-md-12">
+                            <div class="col-md-4">
+                                <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
+                                  <img src="{% static "img/piano_1.PNG" %}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
+                                  <img src="{% static "img/piano_2.PNG" %}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
+                                  <img src="{% static "img/piano_3.PNG" %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="game" style="display: none" class="col-md-12">
+        <section class="row">
+            <div class="col-4 content-btn-iniciar">
+                <img width="100px" src="{% static "img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
+            </div>
+            <div class="col-4 content-btn-iniciar">
+                <h2>Toca el piano</h2>
+            </div>
+            <div class="col-4 content-btn-iniciar">
+                <button class="btn btn-iniciar" id="iniciar_js">Jugar</button>
+            </div>
+        </section>
+        <div id="stage" style="width: 100%; text-align:center; overflow-x: scroll; height: 110px; white-space: nowrap;">
+
+        </div>
+
+        <table id="keyboard" >
+            <tr>
+                <td class="key white upper" colspan="2" id="c1-upper"></td>
+                <td class="key black" colspan="2"></td>
+                <td class="key white upper small" colspan="1" id="d1-upper"></td>
+                <td class="key black" colspan="2"></td>
+                <td class="key white upper" colspan="2" id="e1-upper"></td>
+                <td class="key white upper" colspan="2" id="f1-upper"></td>
+                <td class="key black" colspan="2"></td>
+                <td class="key white upper small" colspan="1" id="g1-upper"></td>
+                <td class="key black" colspan="2"></td>
+                <td class="key white upper small" colspan="1" id="a1-upper"></td>
+                <td class="key black" colspan="2"></td>
+                <td class="key white upper small" colspan="1" id="b1-upper"></td>
+            </tr>
+            <tr>
+                <td class="key white lower" colspan="3" id="c1-lower" onclick="gPitches.play('c1');">
+                    DO <img src={% static "img/teclas/do_espacio.PNG" %} alt="Espacio" width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="d1-lower" onclick="gPitches.play('d1');">
+                    RE <img src={% static "img/teclas/re_derecha.PNG" %} alt="Derecha" width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="e1-lower" onclick="gPitches.play('e1');">
+                    MI <img src={% static "img/teclas/mi_arriba.PNG" %} width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="f1-lower" onclick="gPitches.play('f1');">
+                    FA <img src={% static "img/teclas/fa_izquierda.PNG" %} width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="g1-lower" onclick="gPitches.play('g1');">
+                    SOL <img src={% static "img/teclas/sol_abajo.PNG" %} width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="a1-lower" onclick="gPitches.play('a1');">
+                    LA <img src={% static "img/teclas/la_w.PNG" %} width="80px" height="50px"/>
+                </td>
+                <td class="key white lower" colspan="3" id="b1-lower" onclick="gPitches.play('b1');">
+                    SI <img src={% static "img/teclas/si_s.PNG" %} width="80px" height="50px"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="modal fade in" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">{{ actividades.nombre }}</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ actividades.video }}" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+{% endblock  %}

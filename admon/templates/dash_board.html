@@ -1,0 +1,95 @@
+{% extends "app/base.html" %}
+{% load staticfiles %}
+{% load static %}
+{% block menu %}
+    {% include "menu_admon.html" %}
+{% endblock menu %}
+{% block assets %}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/then-request/2.2.0/request.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script type="application/javascript" src="{% static 'js/register-dash.js' %}"></script>
+    <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
+{% block content %}
+    <div class="row">
+        <h2>DashBoard</h2>
+    </div>
+
+    <div class="row">
+        <form class="form-inline" method="get">
+            <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                <div class="input-group">
+                    <div class="input-group-addon">User: </div>
+                    <select id="id_ui" name="ui" class="form-control" style="width: 200px;">
+                        {% for u in users %}
+                            <option value="{{ u.id }}">{{ u.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Consultar</button>
+        </form>
+    </div>
+    <div class="row">
+        <table class="table table-bordered table-striped" style="background-color: white;" id="dash">
+            <thead>
+            <tr>
+                <th colspan="10">Plataforma de Calificaciones</th>
+            </tr>
+            <tr>
+                <th rowspan="2">Actividades</th>
+                <th rowspan="2">Niveles</th>
+                <th colspan="2">Alumnos</th>
+                <th rowspan="2">Oportunidades</th>
+                <th rowspan="2">Intentos</th>
+                <th rowspan="2">Tiempo (minutos)</th>
+                <th rowspan="2">Fecha Jugada</th>
+                <th rowspan="2">Observaciones</th>
+                <th rowspan="2">Nombre de Usuario</th>
+            </tr>
+            <tr>
+                <th>Identidad</th>
+                <th>Nombre Completo</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for intento in intentos %}
+                <tr onclick="window.show_modal({{ intento.id }}, '{{ intento.observation }}')">
+                    <td>{{ intento.sound.nivel.actividad.nombre }}</td>
+                    <td>{{ intento.sound.nivel.nombre }}</td>
+                    <td>{{ intento.user.usuariosmodel.documento }}</td>
+                    <td>{{ intento.user.first_name }}</td>
+                    <td>{{ intento.cantidad }}</td>
+                    <td>{{ intento.intentos }}</td>
+                    <td>0</td>
+                    <td>{{ intento.created_at }}</td>
+                    <td>{{ intento.observation }}</td>
+                    <td>{{ intento.user.username }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Registro observación</h4>
+                </div>
+                <div class="modal-body">
+                    <input type="text" class="form-control"style="width: 100%" placeholder="Observación" id="observacion">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="window.save_observacion()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

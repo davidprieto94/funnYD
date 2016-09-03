@@ -1,0 +1,29 @@
+{% extends "app/base.html" %}
+{% block menu %}
+	<nav class="navbar navbar-embossed menu-nav row middle" style="background-color: #ffa382!important;">
+        <div class="col-4">
+        <div class="fuente">
+            funnYD
+        </div>
+        </div>
+        <div class="col-5">
+        </div>
+        <div class="col-1">
+            <a href="{% url 'registro' %}" class="btn btn-primary" style="background-color: #FFFF99; color: black;">Registro</a>
+        </div>
+        <div class="col-1">
+            <a href="{% url 'admon_ingresar' %}" class="btn btn-primary" style="background-color: #66FF99; color: black;">Ingresar</a>
+
+        </div>
+    </nav>
+{% endblock menu %}
+{% block content %}
+
+<div class ="fuente fuente-paginicio" >
+	Bienvenido a
+	<img class ="actividad-image" src="static/img/inicio/logo.png" alt="" width="680px" height="350px">
+
+ </div>
+          
+
+	{% endblock content %}

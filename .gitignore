@@ -1,0 +1,4 @@
+.idea/
+*.pyc
+funnyd/staticfiles/
+.DS_Store

@@ -1,0 +1,47 @@
+{% extends "app/base.html" %}
+{% block menu %}
+<nav class="navbar navbar-embossed menu-nav row middle">
+	<div class="col-4">
+		<div class="fuente">Calificaciones</div>
+	</div>
+	<div class="botonbarranav">
+		<a href="{% url 'logout' %}" class="fuente">Salir</a>
+	</div>
+</nav>
+{% endblock menu %}
+{% block content %}
+
+<div class="calificaciones">
+  <h3>Plataforma de Calificaciones</h3>
+  <p align="left" font-size="15px"> Calificacion</p>
+  
+  <table class="tabla">
+    <thead>
+      <tr>
+      	<th>Numero</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Actividad</th>
+        <td>Nivel 1</td>
+        <td>Nivel 2</td>
+        <td>Nivel 3</td>
+        <td>Fecha</td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Oscar</td>
+        <td>Charry</td>
+        <td>Rutina Diaria</td>
+        <td>00:15:00</td>
+        <td>00:15:00</td>
+        <td>00:15:00</td>
+        <td>25/06/2016</td>
+        </tr>
+    
+    </tbody>
+  </table>
+</div>
+
+{% endblock  %}

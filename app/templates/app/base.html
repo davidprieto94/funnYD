@@ -1,0 +1,30 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FunnyD</title>
+    {% block assets %}
+
+    {% endblock assets %}
+{#    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+    <link rel="stylesheet" href="{% static "css/flat-ui.css" %}">
+	<link rel="stylesheet" href="{% static "css/styles.css" %}">
+	<script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="{% static "js/key_press.js" %}"></script>
+	<script src="{% static "js/flat-ui.js" %}" ></script>
+</head>
+<body style="background-image: url('{% static "img/background.jpg" %}');" {% block onload %}{% endblock onload %}>
+	<div class="container">
+		<div class="menu middle flex">
+			{% block menu %}
+			{% endblock menu %}
+		</div>
+		<div class="content center">
+			{% block content %}
+
+			{% endblock content %}
+		</div>
+	</div>
+</body>
+</html>

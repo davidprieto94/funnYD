@@ -155,7 +155,7 @@ STATICFILES_DIRS = (
 
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 LOGIN_URL = 'admon_ingresar'
 
@@ -165,22 +165,25 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
-
-
+#
+#
 AWS_STORAGE_BUCKET_NAME = 'funnyd'
 AWS_ACCESS_KEY_ID = 'AKIAITUYWXW5ZOLAVG6Q'
 AWS_SECRET_ACCESS_KEY = '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'
-
-# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
-# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
-# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
-# We also use it in the next setting.
+#
+# # Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+# # it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+# # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+# # We also use it in the next setting.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
-
-# This is used by the `static` template tag from `static`, if you're using that. Or if anything else
-# refers directly to STATIC_URL. So it's safest to always set it.
-STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
-
-# Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
-# you run `collectstatic`).
+#
+# # This is used by the `static` template tag from `static`, if you're using that. Or if anything else
+# # refers directly to STATIC_URL. So it's safest to always set it.
+STATIC_URL = "https://%s/static/" % AWS_S3_CUSTOM_DOMAIN
+#
+# print "*"*30
+# print STATIC_URL
+#
+# # Tell the staticfiles app to use S3Boto storage when writing the collected static files (when
+# # you run `collectstatic`).
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'

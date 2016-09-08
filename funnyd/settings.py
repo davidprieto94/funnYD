@@ -86,12 +86,8 @@ WSGI_APPLICATION = 'funnyd.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd11f33ibrhne87',
-        'USER': 'rkcvlffegcjted',
-        'PASSWORD': 'KUI7Pl1WOQ2EiDk6n-iA5uR4Ns',
-        'HOST': 'ec2-54-163-240-101.compute-1.amazonaws.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 

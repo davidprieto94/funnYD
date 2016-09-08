@@ -1,10 +1,14 @@
+appnope==0.1.0
 backports.shutil-get-terminal-size==1.0.0
+boto==2.42.0
 decorator==4.0.10
 dj-database-url==0.4.0
 Django==1.9.2
 django-extensions==1.6.1
+django-storages==1.5.0
 django-widget-tweaks==1.4.1
 djangorestframework==3.4.4
+gnureadline==6.3.3
 gunicorn==19.4.5
 ipython==4.2.0
 ipython-genutils==0.1.0

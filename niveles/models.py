@@ -3,14 +3,14 @@ from __future__ import unicode_literals
 import os
 
 from django.contrib.auth.models import User
-from django.core.files.storage import FileSystemStorage
+# from django.core.files.storage import FileSystemStorage
 from django.db import models
 
 from actividades.models import actividadesModel
 from funnyd.settings import STATIC_URL, PROJECT_ROOT
 
-PRIVATE_DIR = os.path.join(PROJECT_ROOT)
-fs = FileSystemStorage(location=PRIVATE_DIR)
+# PRIVATE_DIR = os.path.join(PROJECT_ROOT)
+# fs = FileSystemStorage(location=PRIVATE_DIR)
 
 class nivelesModel(models.Model):
     nombre = models.CharField(max_length=100, blank=False, null=False)
@@ -18,7 +18,7 @@ class nivelesModel(models.Model):
     juego = models.CharField(max_length=50, blank=False, null=False)
     color = models.CharField(max_length=50, blank=True, null=True)
     actividad = models.ForeignKey(actividadesModel)
-    image = models.ImageField(name='image', blank=True, null=True, upload_to="./static/images/", storage=fs)
+    image = models.ImageField(name='image', blank=True, null=True, upload_to="images")
 
     class Meta:
         verbose_name = 'Nivel'

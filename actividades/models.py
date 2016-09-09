@@ -5,11 +5,11 @@ from __future__ import unicode_literals
 import os
 
 from django.db import models
-from django.core.files.storage import FileSystemStorage
+# from django.core.files.storage import FileSystemStorage
 from funnyd.settings import STATIC_ROOT, STATIC_URL, PROJECT_ROOT
 
-PRIVATE_DIR = os.path.join(PROJECT_ROOT)
-fs = FileSystemStorage(location=PRIVATE_DIR)
+# PRIVATE_DIR = os.path.join(PROJECT_ROOT)
+# fs = FileSystemStorage(location=PRIVATE_DIR)
 
 
 class actividadesModel(models.Model):
@@ -21,7 +21,7 @@ class actividadesModel(models.Model):
     key_press = models.CharField(max_length=3, blank=True, null=True)
     key_press_description = models.CharField(max_length=100, blank=True, null=True)
     slug = models.SlugField()
-    image = models.ImageField(name='image', blank=True, null=True, upload_to="./static/images/", storage=fs)
+    image = models.ImageField(name='image', blank=True, null=True, upload_to="images")
     tiempo = models.IntegerField(blank=True, null=True)
     color = models.CharField(max_length=50, blank=True, null=True)
     video = models.CharField(max_length=200, blank=True, null=True)

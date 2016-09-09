@@ -20,7 +20,7 @@
             <div style="background-color: {{ actividad.color }}; width: 49%; height: 250px; display: inline-block; border: 1px solid #000000;">
                 <div class="col-md-6" style="border: 1px solid #000000; height: 250px;">
                     <h6>{{ actividad.nombre }}</h6>
-                    <img class="actividad-image" src="../{{ actividad.image }}" alt="" width="150px" height="150px">
+                    <img class="actividad-image" src="{% static actividad.image %}" alt="" width="150px" height="150px">
                     <a key-data="{{ actividad.key_press }}" href="{% url actividad.nombre %}" class="key-press actividades-button actividades-button-rd" style="background-color: white"> {{ actividad.key_press_description }}</a>
                 </div>
                 <div class="col-md-6" style="border: 1px solid #000000; height: 250px;">

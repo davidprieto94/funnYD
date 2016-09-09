@@ -8,12 +8,12 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="shortcut icon" href="image/niveles/icono.png" type="image/png">
 
-    <script src={% static "js/examples.js" %} ></script>
-    <script src={% static "js/piano.js" %} ></script>
+    <script src={% static "../js/examples.js" %} ></script>
+    <script src={% static "../js/piano.js" %} ></script>
     <script src="//code.createjs.com/createjs-2015.11.26.min.js" ></script>
-    <link rel="stylesheet" href={% static "css/piano.css" %}>
-    <script type="text/javascript" src={% static "js/karaoke.js" %}></script>
-    <script type="text/javascript" src={% static "js/register-piano.js" %}></script>
+    <link rel="stylesheet" href={% static "../css/piano.css" %}>
+    <script type="text/javascript" src={% static "../js/karaoke.js" %}></script>
+    <script type="text/javascript" src={% static "../js/register-piano.js" %}></script>
 
     <script type="application/javascript">
     $(document).ready(function () {
@@ -49,17 +49,17 @@
                         <div class="col-md-12">
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                  <img src="{% static "img/piano_1.PNG" %}" alt="">
+                                  <img src="{% static "../img/piano_1.PNG" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                  <img src="{% static "img/piano_2.PNG" %}" alt="">
+                                  <img src="{% static "../img/piano_2.PNG" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                  <img src="{% static "img/piano_3.PNG" %}" alt="">
+                                  <img src="{% static "../img/piano_3.PNG" %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
     <div id="game" style="display: none" class="col-md-12">
         <section class="row">
             <div class="col-4 content-btn-iniciar">
-                <img width="100px" src="{% static "img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
+                <img width="100px" src="{% static "../img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
             </div>
             <div class="col-4 content-btn-iniciar">
                 <h2>Toca el piano</h2>
@@ -102,25 +102,25 @@
             </tr>
             <tr>
                 <td class="key white lower" colspan="3" id="c1-lower" onclick="gPitches.play('c1');">
-                    DO <img src={% static "img/teclas/do_espacio.PNG" %} alt="Espacio" width="80px" height="50px"/>
+                    DO <img src={% static "../img/teclas/do_espacio.PNG" %} alt="Espacio" width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="d1-lower" onclick="gPitches.play('d1');">
-                    RE <img src={% static "img/teclas/re_derecha.PNG" %} alt="Derecha" width="80px" height="50px"/>
+                    RE <img src={% static "../img/teclas/re_derecha.PNG" %} alt="Derecha" width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="e1-lower" onclick="gPitches.play('e1');">
-                    MI <img src={% static "img/teclas/mi_arriba.PNG" %} width="80px" height="50px"/>
+                    MI <img src={% static "../img/teclas/mi_arriba.PNG" %} width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="f1-lower" onclick="gPitches.play('f1');">
-                    FA <img src={% static "img/teclas/fa_izquierda.PNG" %} width="80px" height="50px"/>
+                    FA <img src={% static "../img/teclas/fa_izquierda.PNG" %} width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="g1-lower" onclick="gPitches.play('g1');">
-                    SOL <img src={% static "img/teclas/sol_abajo.PNG" %} width="80px" height="50px"/>
+                    SOL <img src={% static "../img/teclas/sol_abajo.PNG" %} width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="a1-lower" onclick="gPitches.play('a1');">
-                    LA <img src={% static "img/teclas/la_w.PNG" %} width="80px" height="50px"/>
+                    LA <img src={% static "../img/teclas/la_w.PNG" %} width="80px" height="50px"/>
                 </td>
                 <td class="key white lower" colspan="3" id="b1-lower" onclick="gPitches.play('b1');">
-                    SI <img src={% static "img/teclas/si_s.PNG" %} width="80px" height="50px"/>
+                    SI <img src={% static "../img/teclas/si_s.PNG" %} width="80px" height="50px"/>
                 </td>
             </tr>
         </table>

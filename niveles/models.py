@@ -50,15 +50,7 @@ class soundModel(models.Model):
 
     @property
     def file_url(self):
-        print self.file.path
-        try:
-            return "{0}{1}".format(STATIC_URL, self.file.path.split(STATIC_URL)[1])
-        except Exception, e:
-            try:
-                return "{0}{1}".format(STATIC_URL, self.file.path.split("\\static\\")[1])
-            except Exception, e:
-                pass
-            return ""
+        return self.file.url
 
 
 class Intento(models.Model):

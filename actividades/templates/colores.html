@@ -2,11 +2,11 @@
 {% load staticfiles %}
 {% load static %}
 {% block assets %}
-    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "../js/jquery.min.js" %}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/then-request/2.2.0/request.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-	<script src="{% static "js/register-colores.js" %}"></script>
-	<script src="{% static "js/dnd-colores.js" %}"></script>
+	<script src="{% static "../js/register-colores.js" %}"></script>
+	<script src="{% static "../js/dnd-colores.js" %}"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <style>
         .btn-iniciar {
@@ -75,17 +75,17 @@
                         <div class="col-md-12">
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                  <img src="{% static "img/nivel_1.png" %}" alt="">
+                                  <img src="{% static "../img/nivel_1.png" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                  <img src="{% static "img/nivel_2.png" %}" alt="">
+                                  <img src="{% static "../img/nivel_2.png" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                  <img src="{% static "img/nivel_3.png" %}" alt="">
+                                  <img src="{% static "../img/nivel_3.png" %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -98,7 +98,7 @@
     <div id="game" style="display: none" class="col-md-12">
         <section class="row">
             <div class="col-4 content-btn-iniciar">
-                <img width="100px" src="{% static "img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
+                <img width="100px" src="{% static "../img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
             </div>
             <div class="col-4 content-btn-iniciar">
                 <h2>Encajar aquí</h2>

@@ -2,12 +2,12 @@
 {% load staticfiles %}
 {% load static %}
 {% block assets %}
-    <script src="{% static "js/jquery.min.js" %}"></script>
+    <script src="{% static "../js/jquery.min.js" %}"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/then-request/2.2.0/request.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="{% static "js/jsRev.js" %}"></script>
-    <script src="{% static "js/register-baila.js" %}"></script>
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <script src="{% static "../js/jsRev.js" %}"></script>
+    <script src="{% static "../js/register-baila.js" %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static "../css/style.css" %}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="application/javascript">
     $(document).ready(function () {
@@ -55,17 +55,17 @@
                         <div class="col-md-12">
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                    <img src="{% static "img/ddr_1.PNG" %}" alt="">
+                                    <img src="{% static "../img/ddr_1.PNG" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                    <img src="{% static "img/ddr_2.PNG" %}" alt="">
+                                    <img src="{% static "../img/ddr_2.PNG" %}" alt="">
                                 </a>
                             </div>
                             <div class="col-md-4">
                                 <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                    <img src="{% static "img/ddr_3.PNG" %}" alt="">
+                                    <img src="{% static "../img/ddr_3.PNG" %}" alt="">
                                 </a>
                             </div>
                         </div>
@@ -80,7 +80,7 @@
             <div class="col-md-12" style="text-align: left">
                 <section class="row">
                 <div class="col-4 content-btn-iniciar">
-                    <img width="100px" src="{% static "img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
+                    <img width="100px" src="{% static "../img/video.gif" %}" alt="video" style="float: left" onclick="$('#myModal').modal('show');">
                 </div>
                 <div class="col-4 content-btn-iniciar">
                     <h2>A Jugar</h2>
@@ -98,10 +98,10 @@
 
                 <div class="stage"></div>
                 <div id="controls">
-                    <img class="a" id="left" src={% static "img/arrows/staticLeft.png" %}>
-                    <img class="a" id="up" src={% static "img/arrows/staticUp.png" %}>
-                    <img class="a" id="down" src={% static "img/arrows/staticDown.png" %}>
-                    <img class="a" id="right" src={% static "img/arrows/staticRight.png" %}>
+                    <img class="a" id="left" src={% static "../img/arrows/staticLeft.png" %}>
+                    <img class="a" id="up" src={% static "../img/arrows/staticUp.png" %}>
+                    <img class="a" id="down" src={% static "../img/arrows/staticDown.png" %}>
+                    <img class="a" id="right" src={% static "../img/arrows/staticRight.png" %}>
                     <br>
                 </div>
                 <p><input id="boton" class="btn btn-default hide" type="button" onclick="start()" value="Iniciar"></p>

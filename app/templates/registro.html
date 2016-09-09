@@ -1,13 +1,13 @@
 {% extends "app/base.html" %}
 {% block menu %}
     <nav style="background-color: #00C8F8" class="navbar navbar-embossed menu-nav row middle">
-        <div class="col-4">
+        <div class="col-10">
             <div class="fuente">Registro</div>
         </div>
-        <div class="botonbarranav">
+       <div class="col-1">
             <a href="{% url 'admon_ingresar' %}" class="btn btn-primary" style="background-color: #66FF99; color: #000000; border: 1px solid #000000">Ingreso</a>
         </div>
-            <div class="botonbarranav">
+            <div class="col-1">
                 <a href="{% url 'logout' %}" class="fuente"> Salir </a>
         </div>
     </nav>

@@ -7,7 +7,7 @@
 			<div class="fuente">Ingreso </div>
 		</div>
 		<div class="botonbarranav">
-            <a href="/" class="btn btn-primary" style="background-color: #FFFF99;color: #000000;">registro</a>
+            <a href="{% url 'registro' %}" class="btn btn-primary" style="background-color: #FFFF99;color: #000000;">Registro</a>
 		</div>
 	</nav>
 {% endblock menu %}
@@ -19,7 +19,7 @@
 
 		<form method="POST" >
             <div class="form-group">
-                <h3 style="text-align: left; padding-left:48px;">Ingresa</h3>
+                <h3 style="text-align: left; padding-left:48px;">Ingresa!</h3>
             </div>
             {% csrf_token %}
             {% if form.non_field_errors %}
@@ -27,7 +27,7 @@
             {% endif %}
             <div class="form-group">
                 <div class="col-sm-12">
-                    {{ form.username|attr:"class:form-control"|attr:'placeholder:usuario o identificación'|attr:'autofocus' }}
+                    {{ form.username|attr:"class:form-control"|attr:'placeholder:Usuario o identificación'|attr:'autofocus' }}
                     {{ form.username.errors }}
                 </div>
             </div>
@@ -37,6 +37,10 @@
                     {{ form.password.errors }}
                 </div>
             </div>
+                    <div style="text-align: right">
+                <a href="{% url 'cambiocontrasenia' %}" style="margin-right: 50px; color: #1468F7; font-family: 'Comic Sans'; font-size: 16px; text-decoration: underline "> ¿Olvidaste tu contraseña?</a>
+            </div>
+
             {% if next %}
                 <input type="hidden" name="next" value="{{ next }}">
             {% endif %}

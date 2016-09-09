@@ -2,10 +2,10 @@
 {% block menu %}
     <nav style="background-color: #00C8F8" class="navbar navbar-embossed menu-nav row middle">
         <div class="col-4">
-            <div class="fuente">Registro </div>
+            <div class="fuente">Registro</div>
         </div>
         <div class="botonbarranav">
-            <a href="/" class="btn btn-primary" style="background-color: #66FF99; color: #000000; border: 1px solid #000000"> ingreso</a>
+            <a href="{% url 'admon_ingresar' %}" class="btn btn-primary" style="background-color: #66FF99; color: #000000; border: 1px solid #000000">Ingreso</a>
         </div>
     </nav>
 {% endblock menu %}
@@ -47,7 +47,7 @@
                 <input type="date" class="form-control login-field" value="" placeholder="Fecha de nacimiento" id="id_fnacimiento" name="fnacimiento">
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg btn-block" href="#" style="background-color:#FFFF99; color: #000; border: 1px solid #000000 "> Registrar </button>
+            <button type="submit" class="btn btn-primary btn-lg btn-block" href="#" style="background-color:#FFFF99; color: #000; border: 1px solid #000000 "> Registrate </button>
         </form>
         {% if form.errors %}
             {{ form.non_field_errors.as_ul|cut:"*" }}

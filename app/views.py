@@ -5,11 +5,6 @@ from django.contrib.auth.models import User
 def inicio(request):
     return render(request, 'inicio.html')
 
-
-def registro(request):
-    return render(request, "registro.html")
-
-
 def ingreso(request):
     return render(request, "ingreso.html")
 

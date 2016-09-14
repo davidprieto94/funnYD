@@ -192,3 +192,6 @@ STATIC_URL = "https://%s/static/" % AWS_S3_CUSTOM_DOMAIN
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+TIME_ZONE = 'America/Bogota'
+LANGUAGE_CODE = 'es-CO'

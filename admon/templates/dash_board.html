@@ -47,7 +47,6 @@
                 <th rowspan="2">Tiempo (minutos)</th>
                 <th rowspan="2">Fecha Jugada</th>
                 <th rowspan="2">Observaciones</th>
-                <th rowspan="2">Nombre de Usuario</th>
             </tr>
             <tr>
                 <th>Identidad</th>
@@ -57,16 +56,15 @@
             <tbody>
             {% for intento in intentos %}
                 <tr onclick="window.show_modal({{ intento.id }}, '{{ intento.observation }}')">
-                    <td>{{ intento.sound.nivel.actividad.nombre }}</td>
-                    <td>{{ intento.sound.nivel.nombre }}</td>
-                    <td>{{ intento.user.usuariosmodel.documento }}</td>
-                    <td>{{ intento.user.first_name }}</td>
-                    <td>{{ intento.cantidad }}</td>
-                    <td>{{ intento.intentos }}</td>
+                    <td>{% if intento.sound.nivel.actividad.nombre %}{{ intento.sound.nivel.actividad.nombre }}{% endif %}</td>
+                    <td>{% if intento.sound.nivel.nombre %}{{ intento.sound.nivel.nombre }}{% endif %}</td>
+                    <td>{% if intento.user.usuariosmodel.documento %}{{ intento.user.usuariosmodel.documento }}{% endif %}</td>
+                    <td>{% if intento.user.first_name %}{{ intento.user.first_name }}{% endif %}</td>
+                    <td>{% if intento.cantidad %}{{ intento.cantidad }}{% endif %}</td>
+                    <td>{% if intento.intentos %}{{ intento.intentos }}{% endif %}</td>
                     <td>0</td>
-                    <td>{{ intento.created_at }}</td>
-                    <td>{{ intento.observation }}</td>
-                    <td>{{ intento.user.username }}</td>
+                    <td>{% if intento.intentos %}{{ intento.created_at }}{% endif %}</td>
+                    <td>{% if intento.intentos %}{{ intento.observation }}{% endif %}</td>
                 </tr>
             {% endfor %}
             </tbody>

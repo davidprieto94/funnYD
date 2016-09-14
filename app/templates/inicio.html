@@ -1,10 +1,10 @@
 {% extends "app/base.html" %}
 {% block menu %}
-	<nav class="navbar navbar-embossed menu-nav row middle" style="background-color: #ffa382!important;">
+    <nav class="navbar navbar-embossed menu-nav row middle" style="background-color: #ffa382!important;">
         <div class="col-4">
-        <div class="fuente">
-            funnYD
-        </div>
+            <div class="fuente">
+                funnYD
+            </div>
         </div>
         <div class="col-5">
         </div>
@@ -19,11 +19,59 @@
 {% endblock menu %}
 {% block content %}
 
-<div class ="fuente fuente-paginicio" >
-	Bienvenido a
-	<img class ="actividad-image" src="static/img/inicio/logo.png" alt="" width="680px" height="350px">
+    <div class ="fuente fuente-paginicio" >
+        Bienvenido a
+        <img class ="actividad-image" src="static/img/inicio/logo.png" alt="" width="680px" height="350px">
 
- </div>
-          
+    </div>
 
-	{% endblock content %}
+    <!--background audio-->
+    <style media="screen" type="text/css">
+        #backgroundaudio {
+            display: block;
+            position: fixed;
+            bottom: -43px;
+            left: 5px;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        #backgroundaudio:hover {
+            bottom: 0;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        #backgroundaudio audio {
+            background: #ffffff;
+            padding: 5px;
+            display: table-cell;
+            vertical-align: middle;
+            height: 43px;
+            z-index: 9998;
+        }
+        #backgroundaudio i {
+            font-size: 40px;
+            display: block;
+            background: #ffffff;
+            padding: 5px;
+            width: 50px;
+            float: none;
+            margin-bottom: -1px;
+            z-index: 9999;
+        }
+    </style>
+    <div id="backgroundaudio">
+        <i class="fa fa-volume-up"></i>
+        <audio autoplay="" controls="" loop="" preload="">
+            <source src="{{ STATIC_URL }}/m.mp3" type="audio/mpeg"/>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+
+{% endblock content %}

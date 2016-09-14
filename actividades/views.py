@@ -53,8 +53,8 @@ def rutina(request):
 @login_required
 def colores(request):
     slug = request.GET.get('slug', None)
-    actividades = actividadesModel.objects.get(nombre='Rutina')
-    nivel = nivelesModel.objects.filter(slug=slug, juego='Rutina').first()
+    actividades = actividadesModel.objects.get(nombre='Colores')
+    nivel = nivelesModel.objects.filter(slug=slug, juego='Colores').first()
     return render(request, "colores.html", {
         'slug': slug,
         'nivel': nivel,

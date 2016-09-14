@@ -136,7 +136,7 @@ function start(){
 
 			function(callback) {
 
-				window.setTimeout(callback, 40 / 75);
+				window.setTimeout(callback, 40 / 65);
 
 			};
 

@@ -17,8 +17,10 @@ class nivelesModel(models.Model):
     slug = models.SlugField()
     juego = models.CharField(max_length=50, blank=False, null=False)
     color = models.CharField(max_length=50, blank=True, null=True)
-    actividad = models.ForeignKey(actividadesModel)
+    actividad = models.ForeignKey(actividadesModel, blank=True, null=True)
     image = models.ImageField(name='image', blank=True, null=True, upload_to="images")
+
+    order = models.IntegerField(blank=True, null=True)
 
     class Meta:
         verbose_name = 'Nivel'

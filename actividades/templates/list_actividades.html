@@ -24,7 +24,7 @@
                     <a key-data="{{ actividad.key_press }}" href="{% url actividad.nombre %}" class="key-press actividades-button actividades-button-rd" style="background-color: white"> {{ actividad.key_press_description }}</a>
                 </div>
                 <div class="col-md-6" style="border: 1px solid #000000; height: 250px;">
-                    {% for nivel in actividad.nivelesmodel_set.all %}
+                    {% for nivel in actividad.nivelesmodel_set_ordered %}
                         <div class="col-md-12">
                             <a href="{% url actividad.nombre %}?slug={{ nivel.slug }}">
                                 <img class="actividad-image" src="{{ nivel.image.url }}" alt="" height="60px" style="margin: 10px 50px;">

@@ -35,3 +35,6 @@ class actividadesModel(models.Model):
 
     def __unicode__(self):
         return u'%s' % (self.nombre)
+
+    def nivelesmodel_set_ordered(self):
+        return self.nivelesmodel_set.all().order_by("order")

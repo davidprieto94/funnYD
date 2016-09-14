@@ -51,7 +51,7 @@ function start(){
 	}
 
 	Arrow.prototype.step = function() {
-		this.image.css("top", "+=2px");
+		this.image.css("top", "+=1px");
 	};
 
 	Arrow.prototype.destroy = function() {

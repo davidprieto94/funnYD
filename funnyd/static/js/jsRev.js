@@ -23,16 +23,16 @@ function start(){
 
 		switch(direction) {
 
-			case "left" : xPos = "115px";
+			case "left" : xPos = "225px";
 			break;
 
-			case "up" : xPos = "182px";
+			case "up" : xPos = "292px";
 			break;
 
-			case "down" : xPos = "252px";
+			case "down" : xPos = "362px";
 			break;
 
-			case "right" : xPos = "322px";
+			case "right" : xPos = "432px";
 			break;
 
 		}

@@ -44,36 +44,6 @@
     </nav>
 {% endblock %}
 {% block  content %}
-    <div id="wellcome">
-        <div class="container">
-            <h1>Hola {{ user.first_name }}</h1>
-            <h3>Bienvenido a Baila</h3>
-            <p>Selecciona el nivel de baila con el que quieres enfrentar el reto.</p>
-            <div class="col-md-12">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                    <img src="{% static "../img/ddr_1.PNG" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                    <img src="{% static "../img/ddr_2.PNG" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                    <img src="{% static "../img/ddr_3.PNG" %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="container" id="game" style="display: none; padding-top: 20px">
         <!-- Example row of columns -->
         <div class="row">
@@ -92,7 +62,7 @@
                 <p>
                     Presiona las teclas correspondientes.
                 </p>
-                <section>
+                <section style="display: none;">
                     <p>Fallas: <strong> <span id="fallas"></span></strong> </p>
                 </section>
 
@@ -122,7 +92,7 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

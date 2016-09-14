@@ -53,8 +53,8 @@
 {% endblock %}
 {% block menu %}
     <nav class="navbar navbar-embossed menu-nav row middle " style="background-color: #75A9F9">
-        <div class="col-4">
-            <div class="fuente">Actividades | Rutina diaria</div>
+        <div class="col-8">
+            <div class="fuente">Actividades | Rutina Diaria</div>
         </div>
         <div class="botonbarranav">
             <a id="game_save" class="key-press fuente" style="display: inline-block" href="#"> Guardar </a>
@@ -64,37 +64,7 @@
     </nav>
 {% endblock %}
 {% block  content %}
-    <div id="wellcome">
-        <div class="container">
-            <h1>Hola {{ user.first_name }}</h1>
-            <h3>Bienvenido a Rutina</h3>
-            <p>Selecciona el nivel de dificultad con el que quieres enfrentar el reto.</p>
-            <div class="col-md-12">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                    <img src="{% static "../img/nivel_1.png" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                    <img src="{% static "../img/nivel_2.png" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                    <img src="{% static "../img/nivel_3.png" %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>,
-
+    
     <div id="game" style="display: none" class="col-md-12">
         <section class="row">
             <div class="col-4 content-btn-iniciar">
@@ -111,19 +81,12 @@
 
         </section>
 
-
         <section class="dropzoneContenedor" id="dropzoneContenedor_js">
-
         </section>
-
+        
         <h2>Arrastrar Imágenes</h2>
         <section class="draggablesContenedor" id="draggablesContenedor_js">
-
         </section>
-
-
-
-
         <section style="display: none;">
             <p>Intentos : <strong> <span id="contenedorIntentos_js"></span></strong> </p>
             <p>Tiempo : <strong> <span id="Segundos"></span></strong> </p>
@@ -143,7 +106,7 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

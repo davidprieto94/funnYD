@@ -15,6 +15,7 @@
     <script type="text/javascript" src={% static "../js/karaoke.js" %}></script>
     <script type="text/javascript" src={% static "../js/register-piano.js" %}></script>
 
+   
     <script type="application/javascript">
     $(document).ready(function () {
         $('.modal').modal('show');
@@ -38,36 +39,6 @@
     {% if slug %} onload="window.get_play('{{ slug }}'); return false;" {% endif %}
 {% endblock %}
 {% block  content %}
-	<div id="wellcome">
-        <div class="container">
-            <h1>Hola {{ user.first_name }}</h1>
-            <h3>Bienvenido a Piano</h3>
-            <p>Selecciona el nivel de dificultad con el que quieres enfrentar el reto.</p>
-            <div class="col-md-12">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('primer-nivel'); return false;">
-                                  <img src="{% static "../img/piano_1.PNG" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('segundo-nivel'); return false;">
-                                  <img src="{% static "../img/piano_2.PNG" %}" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-4">
-                                <a href="#" class="thumbnail" onclick="window.get_play('tercer-nivel'); return false;">
-                                  <img src="{% static "../img/piano_3.PNG" %}" alt="">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
     <div id="game" style="display: none" class="col-md-12">
         <section class="row">
@@ -139,7 +110,7 @@
                     </p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->

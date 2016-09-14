@@ -1,5 +1,5 @@
 var template = _.template('<section class = "contentDrag"> <article audio-data="<%- audio %>" relacion-data="" class="draggables" draggable="true"> <img src="<%- imgsrc %>" width="210" height="130"> </article> </section>');
-var template2 = _.template('<article relacion-data="" class="dropzone col-3" dropzone-data="true"> <img src="/static/images/casillas/CasRutDia<%- index %>.png" %}" width="210" height="130"> </article>')
+var template2 = _.template('<article relacion-data="" class="dropzone col-3" dropzone-data="true"> <img src="/static/images/Rutina/Casillas/CasRutDia<%- index %>.png" %}" width="210" height="130"> </article>')
 board = "#register"
 game = "#game"
 wellcome = "#wellcome"

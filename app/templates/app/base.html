@@ -2,29 +2,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>funnyD</title>
+    <meta charset="UTF-8">
+    <title>funnyD</title>
     {% block assets %}
 
     {% endblock assets %}
-{#    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
+    {#    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">#}
     <link rel="stylesheet" href="{% static "../css/flat-ui.css" %}">
-	<link rel="stylesheet" href="{% static "../css/styles.css" %}">
-	<script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "../css/styles.css" %}">
+    <script src="//code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
     <script src="{% static "../js/key_press.js" %}"></script>
-	<script src="{% static "../js/flat-ui.js" %}" ></script>
+    <script src="{% static "../js/flat-ui.js" %}" ></script>
+    <!--background audio-->
+    <style media="screen" type="text/css">
+        #backgroundaudio {
+            display: block;
+            position: fixed;
+            bottom: -43px;
+            left: 5px;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        #backgroundaudio:hover {
+            bottom: 0;
+            -webkit-transition: all 1s ease-in-out;
+            -moz-transition: all 1s ease-in-out;
+            -ms-transition: all 1s ease-in-out;
+            -o-transition: all 1s ease-in-out;
+            transition: all 1s ease-in-out;
+        }
+        #backgroundaudio audio {
+            background: #ffffff;
+            padding: 5px;
+            display: table-cell;
+            vertical-align: middle;
+            height: 43px;
+            z-index: 9998;
+        }
+        #backgroundaudio i {
+            font-size: 40px;
+            display: block;
+            background: #ffffff;
+            padding: 5px;
+            width: 50px;
+            float: none;
+            margin-bottom: -1px;
+            z-index: 9999;
+        }
+    </style>
 </head>
 <body style="background-image: url('{% static "img/background.jpg" %}');" {% block onload %}{% endblock onload %}>
-	<div class="container">
-		<div class="menu middle flex">
-			{% block menu %}
-			{% endblock menu %}
-		</div>
-		<div class="content center">
-			{% block content %}
+<div class="container">
+    <div class="menu middle flex">
+        {% block menu %}
+        {% endblock menu %}
+    </div>
+    <div class="content center">
+        {% block content %}
 
-			{% endblock content %}
-		</div>
-	</div>
+        {% endblock content %}
+    </div>
+</div>
 </body>
 </html>

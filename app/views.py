@@ -15,11 +15,16 @@ def plataforma(request):
 
 def cambiocontrasenia(request):
     if request.POST:
-        u = User.objects.get(username=request.POST.get('login-usuario'), is_admin=False)
-        if request.POST.get('login-pass') == request.POST.get('login-pass2'):
-            u.set_password(request.POST.get('login-pass'))
-            u.save()
-            return render(request, "ingreso.html")
+        print "here"
+        print request.POST.get('login-usuario')
+        try:
+            u = User.objects.get(username=request.POST.get('login-usuario'), is_superuser=False)
+            if request.POST.get('login-pass') == request.POST.get('login-pass2'):
+                u.set_password(request.POST.get('login-pass'))
+                u.save()
+                return render(request, "ingreso.html")
+        except Exception, e:
+            print e
 
 
     return render(request, "cambiocontrasenia.html")

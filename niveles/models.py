@@ -67,4 +67,4 @@ class Intento(models.Model):
     observation = models.TextField(blank=True, null=True)
 
     def __str__(self):
-        return u'%s | %s | %s' % (self.sound.nivel.actividad.nombre, self.sound.nivel.nombre)
+        return u'%s | %s' % (self.sound.nivel.actividad.nombre, self.sound.nivel.nombre)

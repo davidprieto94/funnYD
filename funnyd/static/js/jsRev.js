@@ -23,16 +23,16 @@ function start(){
 
 		switch(direction) {
 
-			case "left" : xPos = "225px";
+			case "left" : xPos = "115px";
 			break;
 
-			case "up" : xPos = "292px";
+			case "up" : xPos = "182px";
 			break;
 
-			case "down" : xPos = "362px";
+			case "down" : xPos = "252px";
 			break;
 
-			case "right" : xPos = "432px";
+			case "right" : xPos = "322px";
 			break;
 
 		}
@@ -51,7 +51,7 @@ function start(){
 	}
 
 	Arrow.prototype.step = function() {
-		this.image.css("top", "+=1px");
+		this.image.css("top", "+=2px");
 	};
 
 	Arrow.prototype.destroy = function() {
@@ -136,7 +136,7 @@ function start(){
 
 			function(callback) {
 
-				window.setTimeout(callback, 40 / 65);
+				window.setTimeout(callback, 40 / 75);
 
 			};
 

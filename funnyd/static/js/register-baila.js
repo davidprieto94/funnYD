@@ -67,7 +67,6 @@ window.get_play = function(nivel){
 		console.log(json)
         var i = Math.floor(Math.random() * json[0].soundmodel_set.length)
         var sound = json[0].soundmodel_set[i];
-        debugger;
         window.play_variables = {
             sound_src: sound.file_url,
             sound_id: sound.id,

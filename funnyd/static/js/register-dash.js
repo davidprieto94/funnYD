@@ -15,7 +15,6 @@ function getCookie(name) {
 }
 
 window.save_observacion = function () {
-    debugger;
     var observacion = $('#observacion').val();
     var id = window.obsertavacion_id;
     request('POST', window.location.origin + '/api/niveles/intentos/',{

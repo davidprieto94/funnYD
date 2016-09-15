@@ -34,7 +34,6 @@ $(document).ready(function(){
 });
 
 window.game_save = function () {
-    debugger;
     request('POST', window.location.origin + '/api/niveles/niveles/',{
         headers: {
             'X-CSRFToken': getCookie('csrftoken'),

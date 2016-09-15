@@ -46,14 +46,12 @@ $(document).ready(function(){
         var relacion = evento.dataTransfer.getData("text/plain",1)
 
         elementDrag.classList.remove("ocultar")
-        debugger;
         if (relacion == this.getAttribute("relacion-data")){
             this.innerHTML = element
             var nodeParent = elementDrag.parentNode
             nodeParent.removeChild(elementDrag)
             validDropzone()
             $("#draggablesContenedor_js").find("section").find("[data-related='" + relacion + "']").show()
-            debugger;
 
         }else{
 

@@ -42,6 +42,7 @@
                 <th rowspan="2">Actividades</th>
                 <th rowspan="2">Niveles</th>
                 <th colspan="2">Alumnos</th>
+                <th colspan="2">Edad</th>
                 <th rowspan="2">Oportunidades</th>
                 <th rowspan="2">Intentos</th>
                 <th rowspan="2">Tiempo (minutos)</th>
@@ -59,7 +60,8 @@
                     <td>{% if intento.sound.nivel.actividad.nombre %}{{ intento.sound.nivel.actividad.nombre }}{% endif %}</td>
                     <td>{% if intento.sound.nivel.nombre %}{{ intento.sound.nivel.nombre }}{% endif %}</td>
                     <td>{% if intento.user.usuariosmodel.documento %}{{ intento.user.usuariosmodel.documento }}{% endif %}</td>
-                    <td>{% if intento.user.first_name %}{{ intento.user.first_name }}{% endif %}</td>
+                    <td>{% if intento.user.first_name %}{{ intento.user.first_name }}{{ intento.user.last_name }}{% endif %}</td>
+                    <td>{% if intento.user.usuariosmodel.edad %}{{ intento.user.usuariosmodel.edad }}{% endif %}</td>
                     <td>{% if intento.cantidad %}{{ intento.cantidad }}{% endif %}</td>
                     <td>{% if intento.intentos %}{{ intento.intentos }}{% endif %}</td>
                     <td>0</td>

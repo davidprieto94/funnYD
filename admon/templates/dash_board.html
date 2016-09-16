@@ -42,7 +42,7 @@
                 <th rowspan="2">Actividades</th>
                 <th rowspan="2">Niveles</th>
                 <th colspan="2">Alumnos</th>
-                <th colspan="2">Edad</th>
+                <th rowspan="2">Edad</th>
                 <th rowspan="2">Oportunidades</th>
                 <th rowspan="2">Intentos</th>
                 <th rowspan="2">Tiempo (minutos)</th>
@@ -65,8 +65,8 @@
                     <td>{% if intento.cantidad %}{{ intento.cantidad }}{% endif %}</td>
                     <td>{% if intento.intentos %}{{ intento.intentos }}{% endif %}</td>
                     <td>0</td>
-                    <td>{% if intento.intentos %}{{ intento.created_at }}{% endif %}</td>
-                    <td>{% if intento.intentos %}{{ intento.observation }}{% endif %}</td>
+                    <td>{% if intento.created_at %}{{ intento.created_at }}{% endif %}</td>
+                    <td>{% if intento.observation %}{{ intento.observation }}{% endif %}</td>
                 </tr>
             {% endfor %}
             </tbody>

@@ -128,10 +128,12 @@ class SignUpView(generic.CreateView):
 
     def form_valid(self, form):
         data = form.data
+        print(data)
         response = super(SignUpView, self).form_valid(form)
         self.object.first_name = data['first_name']
         self.object.last_name = data['last_name']
         self.object.save()
+        print(self.object)
         user = usuariosModel.objects.create(
             user=self.object,
             fnacimiento=data['fnacimiento'],
@@ -139,6 +141,8 @@ class SignUpView(generic.CreateView):
             documento=data['documento'],
 
         )
+
+        print user
 
         # do something with self.object
         return response

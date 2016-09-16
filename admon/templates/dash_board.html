@@ -13,7 +13,8 @@
 {% endblock %}
 {% block content %}
     <div class="row">
-        <h2>DashBoard</h2>
+        <h2>Bienvenido a la plataforma de calificaciones</h2>
+        <h3>La tabla contiene el resultado de las actividades realizadas por cada usuario </h3>
     </div>
 
     <div class="row">
@@ -21,7 +22,7 @@
             <div class="form-group">
                 <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
                 <div class="input-group">
-                    <div class="input-group-addon">User: </div>
+                    <div class="input-group-addon">Usuario: </div>
                     <select id="id_ui" name="ui" class="form-control" style="width: 200px;">
                         {% for u in users %}
                             <option value="{{ u.id }}">{{ u.username }}</option>
@@ -60,7 +61,7 @@
                     <td>{% if intento.sound.nivel.actividad.nombre %}{{ intento.sound.nivel.actividad.nombre }}{% endif %}</td>
                     <td>{% if intento.sound.nivel.nombre %}{{ intento.sound.nivel.nombre }}{% endif %}</td>
                     <td>{% if intento.user.usuariosmodel.documento %}{{ intento.user.usuariosmodel.documento }}{% endif %}</td>
-                    <td>{% if intento.user.first_name %}{{ intento.user.first_name }}{{ intento.user.last_name }}{% endif %}</td>
+                    <td>{% if intento.user.first_name %}{{ intento.user.first_name }} {{ intento.user.last_name }}{% endif %}</td>
                     <td>{% if intento.user.usuariosmodel.edad %}{{ intento.user.usuariosmodel.edad }}{% endif %}</td>
                     <td>{% if intento.cantidad %}{{ intento.cantidad }}{% endif %}</td>
                     <td>{% if intento.intentos %}{{ intento.intentos }}{% endif %}</td>

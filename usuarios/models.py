@@ -1,5 +1,7 @@
+# coding=utf-8
 from __future__ import unicode_literals
 
+import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -22,6 +24,11 @@ class usuariosModel(models.Model):
     genero = models.CharField(max_length=2, choices=GENEROS, null=False, blank=False)
     fnacimiento = models.DateField()
 
+    @property
+    def edad(self):
+        diff = (datetime.date.today() - self.fnacimiento).days
+        years = str(int(diff / 365))
+        return years + ' años'
     # retorna nombre de usuario
     def __str__(self):
         return u'%s' % (self.user)

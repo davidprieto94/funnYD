@@ -68,3 +68,9 @@ class Intento(models.Model):
 
     def __str__(self):
         return u'%s | %s' % (self.sound.nivel.actividad.nombre, self.sound.nivel.nombre)
+
+    @property
+    def time_format(self):
+        m, s = divmod(self.time, 60)
+        h, m = divmod(m, 60)
+        return "%d:%02d:%02d" % (h, m, s)

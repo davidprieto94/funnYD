@@ -20,7 +20,7 @@ class usuariosModel(models.Model):
 
     user = models.OneToOneField(User)
     slug = models.SlugField()
-    documento = models.PositiveIntegerField(null=True, blank=True)
+    documento = models.CharField(null=True, blank=True, max_length=15)
     genero = models.CharField(max_length=2, choices=GENEROS, null=False, blank=False)
     fnacimiento = models.DateField()
 

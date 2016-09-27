@@ -43,7 +43,7 @@ window.game_save = function () {
             cantidad: window.play_variables.cantidad
         }
     }).done(function (res) {
-        alert("Bien!!!... Se a guardado tu puntaje! :)");
+        alert("Lo hiciste bien!!!... Se ha guardado tu puntaje! :)");
         location.reload();
         return true;
     });

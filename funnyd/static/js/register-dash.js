@@ -26,7 +26,7 @@ window.save_observacion = function () {
             id: id,
         }
     }).done(function (res) {
-        alert("Bien!!!... Se a guardado la observación! :)");
+        alert("Lo hiciste bien!!!... Se ha guardado tu puntaje! :)");
         location.reload();
         return true;
     });
@@ -36,21 +36,6 @@ window.show_modal = function (id, observacion) {
     $('#myModal').modal("show");
     window.obsertavacion_id = id;
     $('#observacion').val(observacion);
-    // request('POST', window.location.origin + '/api/niveles/niveles/',{
-    //     headers: {
-    //         'X-CSRFToken': getCookie('csrftoken'),
-    //     },
-    //     json: {
-    //         sound_id: window.play_variables.sound_id,
-    //         piano_notes: window.notes_reristered.join(' '),
-    //         intentos: 0,
-    //         cantidad: 0,
-    //     }
-    // }).done(function (res) {
-    //     alert("Bien!!!... Se a guardado tu puntaje! :)");
-    //     location.reload();
-    //     return true;
-    // });
 }
 
 window.registernote = function(aPitchName){

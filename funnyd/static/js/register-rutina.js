@@ -45,7 +45,7 @@ window.game_save = function () {
             time: window.play_variables.time,
         }
     }).done(function (res) {
-        alert("Bien!!!... Se a guardado tu puntaje! :)");
+        alert("Lo hiciste bien!!!... Se ha guardado tu puntaje! :)");
         location.reload();
         return true;
     });
@@ -61,16 +61,6 @@ window.restart_board = function(aPitchName){
 	$(board).html("");
 }
 
-/*
-function disorder(arr, entropy){
-  var disorderedArr = arr.sort(function(a, b) {
-    return Math.floor(Math.random() * entropy); 
-  });
-
-  return disorderedArr;
-}
-*/
-
 window.get_play = function(nivel){
     window.notes_reristered = []
     // var nivel = $("#difficulty").val()
@@ -83,18 +73,6 @@ window.get_play = function(nivel){
             $("#draggablesContenedor_js").append(template({imgsrc: value.file_url, audio: value.name}))
         })
 
-        /*
-        $.each(tarjetasDesordenadas, function(i, value){
-            $("#draggablesContenedor_js").append(template({imgsrc: value.file_url, audio: value.name}))
-        })
-
-        $.each(json[0].soundmodel_set, function(i, value){
-            $("#dropzoneContenedor_js").append(template2({index: i + 1}));
-        })
-        */
-
-        // console.log(json)
-        // var i = Math.floor(Math.random() * json[0].soundmodel_set.length)
         var sound = json[0].soundmodel_set[0];
         window.play_variables = {
             sound_id: sound.id,
@@ -103,7 +81,6 @@ window.get_play = function(nivel){
             time: 0,
             tiempo: sound.tiempo,
         }
-        // setTimeout(function(){ window.game_save() }, window.play_variables.tiempo * 1000);
         $(game).show();
         $(wellcome).hide();
         return true;

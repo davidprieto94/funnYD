@@ -5,7 +5,7 @@
 			<div class="fuente">Cambio de Contraseña</div>
 		</div>
 		<div class="botonbarranav">
-			<a class="btn btn-primary btn-lg btn-block" style="color: #000000" href="{% url 'inicio' %}">Ingreso </a>
+			<a class="btn btn-primary btn-lg btn-block" style="color: #000000" href="{% url 'admon_ingresar' %}">Ingreso</a>
 		</div>
 	</nav>
 {% endblock menu %}
@@ -15,7 +15,7 @@
         <form action="." method="post">
             {% csrf_token %}
             <div class="form-group">
-                <div class="fuente fuente-form"> Recuerda Tu Contraseña </div>
+                <div class="fuente fuente-form"> Recuerda Tu Contraseña</div>
             </div>
 
             <div class="form-group">
@@ -43,6 +43,13 @@
             </div>
         </form>
   </div>
+   <div id="backgroundaudio">
+        <i class="fa fa-volume-up"></i>
+        <audio autoplay="" controls="" loop="" preload="">
+            <source src="{% static "../m.mp3" %}" type="audio/mpeg"/>
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
 {% endblock  %}
 
